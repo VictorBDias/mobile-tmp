@@ -1,10 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'expo-router';
 import { Controller, useForm } from 'react-hook-form';
-import { Button, Text, TextInput, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
 import { AuthValidator, authValidator } from '@validations/auth';
 import { useAuth } from '@contexts/auth-provider';
 import { spacings } from '@design/spacings';
+import { Button, Input } from 'native-base';
 
 export default function AuthScreen() {
   const router = useRouter();
@@ -32,14 +33,14 @@ export default function AuthScreen() {
   });
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Controller
         control={control}
         rules={{
           required: true,
         }}
         render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
+          <Input
             placeholder="Uid"
             onBlur={onBlur}
             onChangeText={onChange}
@@ -56,7 +57,7 @@ export default function AuthScreen() {
           maxLength: 100,
         }}
         render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
+          <Input
             placeholder="Password"
             onBlur={onBlur}
             onChangeText={onChange}
@@ -66,15 +67,21 @@ export default function AuthScreen() {
         name="password"
       />
 
-      <Button title="Submit" onPress={onSubmit} />
-    </View>
+      <Button onPress={onSubmit}>Submit</Button>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
+    height: '100%',
+    width: '100%',
+    padding: spacings.paddings.regular,
+  },
+  input: {
     marginBottom: spacings.margins.regular,
   },
 });

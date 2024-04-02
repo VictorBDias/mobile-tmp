@@ -8,7 +8,8 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "cleanup": "pnpm exec rimraf node_modules",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx",
+    "prebuild": "expo prebuild"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",

@@ -1,5 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
-import { Redirect, Tabs } from 'expo-router';
+import { Redirect } from 'expo-router';
 
 export default function SignedLayout() {
   // const { isLogged } = useAuth();

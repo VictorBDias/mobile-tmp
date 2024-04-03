@@ -1,11 +1,13 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'expo-router';
 import { Controller, useForm } from 'react-hook-form';
-import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
+import { Text, StyleSheet, SafeAreaView } from 'react-native';
 import { AuthValidator, authValidator } from '@validations/auth';
 import { useAuth } from '@contexts/auth-provider';
 import { spacings } from '@design/spacings';
-import { Button, Input } from 'native-base';
+import { Input } from 'native-base';
+import { Button } from '@components/atoms/Button';
+import { FormInput } from '@components/atoms/FormInput';
 
 export default function AuthScreen() {
   const router = useRouter();
@@ -21,12 +23,11 @@ export default function AuthScreen() {
   const isLoading = status === 'pending' && isSubmitting;
 
   const onSubmit = handleSubmit(({ uid, password }) => {
-    console.log('uid:', uid, 'password:', password);
+    console.log('uid:', uid);
     // const result = await login({
     //   uid,
     //   password,
     // });
-
     // if (result) {
     //   router.push('/(signed)/timeline');
     // }
@@ -34,40 +35,31 @@ export default function AuthScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Controller
+      <FormInput
         control={control}
-        rules={{
-          required: true,
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <Input
-            placeholder="Uid"
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-          />
-        )}
-        name="uid"
+        name={'uid'}
+        label={'Uid'}
+        placeholder={'Placeholder'}
+        required={true}
+        errors={errors.uid}
+        errorMessage={errors.uid?.message}
       />
-      {errors.uid && <Text>This is required.</Text>}
-
-      <Controller
+      <FormInput
         control={control}
-        rules={{
-          maxLength: 100,
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <Input
-            placeholder="Password"
-            onBlur={onBlur}
-            onChangeText={onChange}
-            value={value}
-          />
-        )}
-        name="password"
+        name={'password'}
+        label={'Password'}
+        placeholder={'Password'}
+        required={true}
+        errors={errors.password}
+        errorMessage={errors.password?.message}
       />
 
-      <Button onPress={onSubmit}>Submit</Button>
+      <Button
+        onPress={onSubmit}
+        style={{ width: '92%', marginTop: spacings.small }}
+      >
+        Submit
+      </Button>
     </SafeAreaView>
   );
 }
@@ -79,9 +71,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: '100%',
     width: '100%',
-    padding: spacings.paddings.regular,
-  },
-  input: {
-    marginBottom: spacings.margins.regular,
+    padding: spacings.big,
+    gap: spacings.regular,
   },
 });

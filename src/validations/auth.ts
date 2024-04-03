@@ -1,12 +1,8 @@
 import { z } from 'zod';
 
 export const authValidator = z.object({
-  uid: z.string().refine(str => {
-    if (str.length < 3) {
-      throw new Error('Username must be at least 3 characters long');
-    }
-
-    return true;
+  uid: z.string({ required_error: 'Uid is required' }).min(3, {
+    message: 'Uid must be at least 3 characters long',
   }),
   password: z
     .string({

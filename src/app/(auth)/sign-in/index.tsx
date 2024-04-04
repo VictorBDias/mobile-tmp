@@ -1,13 +1,13 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'expo-router';
-import { Controller, useForm } from 'react-hook-form';
-import { Text, StyleSheet, SafeAreaView } from 'react-native';
+import { useForm } from 'react-hook-form';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import { AuthValidator, authValidator } from '@validations/auth';
 import { useAuth } from '@contexts/auth-provider';
 import { spacings } from '@design/spacings';
-import { Input } from 'native-base';
 import { Button } from '@components/atoms/Button';
 import { FormInput } from '@components/atoms/FormInput';
+import { signInAPi } from '@apis/auth/sign-in';
 
 export default function AuthScreen() {
   const router = useRouter();
@@ -22,15 +22,15 @@ export default function AuthScreen() {
 
   const isLoading = status === 'pending' && isSubmitting;
 
-  const onSubmit = handleSubmit(({ uid, password }) => {
+  const onSubmit = handleSubmit(async ({ uid, password }) => {
     console.log('uid:', uid);
-    // const result = await login({
-    //   uid,
-    //   password,
-    // });
-    // if (result) {
-    //   router.push('/(signed)/timeline');
-    // }
+    const result = await signInAPi({
+      uid,
+      password,
+    });
+    if (result) {
+      router.push('/(signed)/timeline');
+    }
   });
 
   return (

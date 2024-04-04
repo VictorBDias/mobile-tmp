@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://github.com/VictorBDias/mobile-tmp/blob/main/src/assets/bochi.gif" alt="React" width="120">
+  <img src="https://github.com/VictorBDias/mobile-tmp/blob/main/src/assets/bochi.gif" alt="React" width="120" border-radius="16">
   <br>
   <br>
     Template for modern mobile apps

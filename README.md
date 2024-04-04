@@ -1,8 +1,6 @@
 <h1 align="center">
   <br>
-<div style="border-radius: 16px; overflow: hidden;">
-  <img src="https://github.com/VictorBDias/mobile-tmp/blob/main/src/assets/bochi.gif" alt="React" width="120">
-</div>  <br>
+  <img src="https://github.com/VictorBDias/mobile-tmp/blob/main/src/assets/bochi.gif" alt="React" width="160">
   <br>
     Template for modern mobile apps
   <br>

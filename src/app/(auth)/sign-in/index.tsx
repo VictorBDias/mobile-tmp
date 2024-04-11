@@ -29,7 +29,7 @@ export default function AuthScreen() {
       password,
     });
     if (result) {
-      router.push('/(signed)/timeline');
+      router.push('/(signed)/home');
     }
   });
 

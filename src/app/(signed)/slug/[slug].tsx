@@ -5,12 +5,10 @@ export default function Generic() {
   const { slug } = useLocalSearchParams();
 
   return (
-    <View style={{ marginTop: 200 }}>
-      <Link href="/" asChild>
-        <Pressable>
-          <Text>{slug}</Text>
-        </Pressable>
-      </Link>
-    </View>
+    <Link href="/" asChild>
+      <Pressable>
+        <Text>{slug}</Text>
+      </Pressable>
+    </Link>
   );
 }

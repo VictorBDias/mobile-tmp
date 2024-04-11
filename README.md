@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://github.com/VictorBDias/mobile-tmp/blob/main/src/assets/bochi.gif" alt="React" width="140">
+  <img src="https://github.com/VictorBDias/mobile-tmp/blob/main/src/assets/intro.jpeg" alt="React" width="140">
   <br>
     Template for modern mobile apps
   <br>

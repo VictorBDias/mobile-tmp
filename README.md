@@ -1,7 +1,5 @@
 <h1 align="center">
-  <br>
-  <img src="https://github.com/VictorBDias/mobile-tmp/blob/main/src/assets/bochi.gif" alt="React" width="120" border-radius="16">
-  <br>
+  <img src="https://github.com/VictorBDias/mobile-tmp/blob/main/src/assets/bochi.gif" alt="React" width="140">
   <br>
     Template for modern mobile apps
   <br>
@@ -30,13 +28,9 @@
   <a href="#author">Author</a>
 </p>
 
-<br>
-
 ## About
 
 **_React Native_** template with multiple out of the box configurations using best practices and design patterns. Fell free to use :)
-
-<br>
 
 ## Includes
 
@@ -53,8 +47,6 @@
 - react-hook-form
 - zod
 - etc
-
-<br>
 
 ## **Author**
 

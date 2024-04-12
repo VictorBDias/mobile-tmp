@@ -1,4 +1,4 @@
-import { AppHeader } from '@components/molecules/Header';
+import { Header } from '@components/molecules/Header';
 import colors from '@design/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { Redirect, Tabs } from 'expo-router';
@@ -15,7 +15,7 @@ export default function SignedLayout() {
 
   return (
     <>
-      <AppHeader
+      <Header
         content="Hello, @User"
         color={colors.dark[200]}
         avatar="https://images.unsplash.com/photo-1510771463146-e89e6e86560e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80"

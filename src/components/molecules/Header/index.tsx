@@ -3,7 +3,7 @@ import { HStack, IconButton, Icon, Text, Box, Avatar } from 'native-base';
 import { spacings } from '@design/spacings';
 import { IHeaderProps } from './header.interface';
 
-export const AppHeader = ({
+export const Header = ({
   avatar,
   content,
   color,

@@ -11,7 +11,7 @@ import {
 } from 'react';
 
 import type { AuthValidator } from '../validations/auth';
-import { IUser } from '../models/userDTO';
+import { IUser } from '../models/user-DTO';
 import { mmkvStorage } from '../storage/mmkvStorage';
 
 export const AuthContext = createContext<{

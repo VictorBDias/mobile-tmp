@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import { IUser } from '../models/userDTO';
+import { IUser } from '../models/user-DTO';
 import { mmkvStorage } from '../storage/mmkvStorage';
 
 interface UserState {

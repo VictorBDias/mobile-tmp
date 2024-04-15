@@ -1,0 +1,18 @@
+{
+  "pickM": "Escolha o {{field}}",
+  "pickF": "Escolha a {{field}}",
+  "newM": "Novo {{field}}",
+  "newF": "Nova {{field}}",
+  "delete": "Excluir {{field}}",
+  "inputPlaceholderM": "Digite o {{field}}",
+  "inputPlaceholderF": "Digite a {{field}}",
+  "inputRequiredM": "O {{field}} é obrigatório",
+  "inputRequiredF": "A {{field}} é obrigatória",
+  "inputLengthF": "A {{field}} deve ter {{length}} characters",
+  "inputLengthM": "O {{field}} deve ter {{length}} characters",
+  "inputPasswordConfirmationM": "Os {{field}} não são compatíveis",
+  "inputPasswordConfirmationF": "As {{field}} não são compatíveis",
+  "searchNotFound": "Your search did not return any results for '{{search}}'",
+  "confirmDeleteM": "Deseja deletar este {{field}}",
+  "confirmDeleteF": "Deseja deletar esta {{field}}"
+}

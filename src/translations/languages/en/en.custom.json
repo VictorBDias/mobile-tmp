@@ -1,0 +1,18 @@
+{
+  "pickM": "Pick a {{field}}",
+  "pickF": "Pick a {{field}}",
+  "newM": "New {{field}}",
+  "newF": "New {{field}}",
+  "delete": "Delete {{field}}",
+  "inputPlaceholderM": "Enter the {{field}}",
+  "inputPlaceholderF": "Enter the {{field}}",
+  "inputRequiredM": "The {{field}} is required",
+  "inputRequiredF": "The {{field}} is required",
+  "inputLengthF": "The {{field}} must have {{length}} characters",
+  "inputLengthM": "The {{field}} must have {{length}} characters",
+  "inputPasswordConfirmationM": "The {{field}} does match",
+  "inputPasswordConfirmationF": "The {{field}} does match",
+  "searchNotFound": "Your search did not return any results for '{{search}}'",
+  "confirmDeleteM": "Do you want to delete this {{field}}",
+  "confirmDeleteF": "Do you want to delete this {{field}}"
+}

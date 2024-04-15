@@ -1,7 +1,7 @@
-import colors from '@design/colors';
-import { Text } from 'native-base';
-import { Pressable, View } from 'react-native';
+import { Typography } from '@components/atoms/Typography/Typography';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
-  return <Text>Home</Text>;
+  const { t } = useTranslation();
+  return <Typography>{t('home:singular')}</Typography>;
 }

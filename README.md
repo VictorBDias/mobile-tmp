@@ -46,6 +46,7 @@
 - native-base
 - react-hook-form
 - zod
+- i18next
 - etc
 
 ## **Author**

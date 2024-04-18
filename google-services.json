@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "305080922663",
+    "project_id": "mobile-tmp",
+    "storage_bucket": "mobile-tmp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305080922663:android:8b6333688080f25799d402",
+        "android_client_info": {
+          "package_name": "br.com.mobiletmp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6qz4A30lrtwl_NLsD4dJ0_OYsGms6vK0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

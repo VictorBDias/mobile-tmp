@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCE89tPOR_jfDfjyw-iIgWu1ZgvoP9OcPE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>305080922663</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.mobiletmpwear</string>
+	<key>PROJECT_ID</key>
+	<string>mobiletmp-wear</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mobiletmp-wear.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:305080922663:ios:ac97eb2eef20715e99d402</string>
+</dict>
+</plist>

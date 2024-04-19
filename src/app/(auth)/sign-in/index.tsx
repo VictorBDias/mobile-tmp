@@ -8,6 +8,8 @@ import { spacings } from '@design/spacings';
 import { Button } from '@components/atoms/Button';
 import { FormInput } from '@components/atoms/FormInput';
 import { signInAPi } from '@apis/auth/sign-in';
+import { Avatar } from 'tamagui';
+import { useState } from 'react';
 
 export default function AuthScreen() {
   const router = useRouter();
@@ -19,6 +21,7 @@ export default function AuthScreen() {
     resolver: zodResolver(authValidator),
   });
   const { login, status } = useAuth();
+  const [loading, setLoading] = useState(false);
 
   const isLoading = status === 'pending' && isSubmitting;
 
@@ -35,7 +38,7 @@ export default function AuthScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <FormInput
+      {/* <FormInput
         control={control}
         name={'uid'}
         label={'Uid'}
@@ -52,14 +55,18 @@ export default function AuthScreen() {
         required={true}
         errors={errors.password}
         errorMessage={errors.password?.message}
-      />
+      /> */}
+
+      <Avatar size={'$7'} circular>
+        <Avatar.Image src="http://picsum.photos/200/300" />
+        <Avatar.Fallback backgroundColor="red" />
+      </Avatar>
 
       <Button
-        onPress={onSubmit}
-        style={{ width: '92%', marginTop: spacings.small }}
-      >
-        Submit
-      </Button>
+        loading={loading}
+        onPress={() => setLoading(true)}
+        content={'Sign In'}
+      ></Button>
     </SafeAreaView>
   );
 }

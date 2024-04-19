@@ -1,4 +1,4 @@
-type Spacing = {
+type Radius = {
   huge: number;
   big: number;
   regular: number;
@@ -7,7 +7,7 @@ type Spacing = {
   small: number;
 };
 
-export const spacings: Spacing = {
+export const radius: Radius = {
   huge: 40,
   big: 24,
   regular: 16,

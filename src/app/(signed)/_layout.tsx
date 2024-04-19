@@ -7,7 +7,7 @@ import { Text, View } from 'react-native';
 
 export default function SignedLayout() {
   // const { isLogged } = useAuth();
-  const isLogged = true;
+  const isLogged = false;
 
   if (!isLogged) {
     return <Redirect href="/(auth)/sign-in" />;

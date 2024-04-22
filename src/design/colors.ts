@@ -25,7 +25,7 @@ export type IColor = {
 };
 
 export const colors: IColor = {
-  primary: '#1D89CE',
+  primary: '#2f95dc',
   accent: '#ffa00c',
   hoverAccent: '#ffa00c10',
   background: '#F5F5F5',

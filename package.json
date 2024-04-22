@@ -38,6 +38,7 @@
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.29.0",
     "react-native-svg": "^15.1.0",
+    "react-native-unistyles": "^2.7.1",
     "tamagui": "^1.94.5",
     "typescript": "^5.3.0",
     "zod": "^3.22.4",

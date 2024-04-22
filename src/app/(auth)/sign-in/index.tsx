@@ -8,7 +8,7 @@ import { spacings } from '@design/spacings';
 import { Button } from '@components/atoms/Button';
 import { FormInput } from '@components/atoms/FormInput';
 import { signInAPi } from '@apis/auth/sign-in';
-import { Avatar } from 'tamagui';
+import { Avatar, Form } from 'tamagui';
 import { useState } from 'react';
 
 export default function AuthScreen() {
@@ -38,35 +38,39 @@ export default function AuthScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <FormInput
-        control={control}
-        name={'uid'}
-        label={'Uid'}
-        placeholder={'Placeholder'}
-        required={true}
-        errors={errors.uid}
-        errorMessage={errors.uid?.message}
-      />
-      <FormInput
-        control={control}
-        name={'password'}
-        label={'Password'}
-        placeholder={'Password'}
-        required={true}
-        errors={errors.password}
-        errorMessage={errors.password?.message}
-      /> */}
+      <Form onSubmit={onSubmit}>
+        <FormInput
+          control={control}
+          name={'uid'}
+          label={'Uid'}
+          placeholder={'Placeholder'}
+          required={true}
+          errors={errors.uid}
+          errorMessage={errors.uid?.message}
+        />
+        <FormInput
+          control={control}
+          name={'password'}
+          label={'Password'}
+          placeholder={'Password'}
+          required={true}
+          errors={errors.password}
+          errorMessage={errors.password?.message}
+        />
 
-      <Avatar size={'$7'} circular>
+        {/* <Avatar size={'$7'} circular>
         <Avatar.Image src="http://picsum.photos/200/300" />
         <Avatar.Fallback backgroundColor="red" />
-      </Avatar>
+      </Avatar> */}
 
-      <Button
-        loading={loading}
-        onPress={() => setLoading(true)}
-        content={'Sign In'}
-      ></Button>
+        <Form.Trigger asChild>
+          <Button
+            // loading={loading}
+            onPress={() => setLoading(true)}
+            content={'Sign In'}
+          />
+        </Form.Trigger>
+      </Form>
     </SafeAreaView>
   );
 }

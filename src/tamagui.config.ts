@@ -14,16 +14,6 @@ export const tokens = createTokens({
 const tamaguiConfig = createTamagui({
   ...config,
   tokens,
-  themes: {
-    light: {
-      bg: '#f2f2f2',
-      color: tokens.color.fullColor,
-    },
-    dark: {
-      bg: '#111',
-      color: tokens.color.background,
-    },
-  },
   shorthands: {
     m: 'margin',
     w: 'width',

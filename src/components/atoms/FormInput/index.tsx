@@ -22,6 +22,10 @@ export const FormInput = ({
   errors,
   helperText,
   errorMessage,
+  inputMode = 'text',
+  type,
+  style,
+  ...rest
 }: IFormInputProps) => {
   return (
     <Controller
@@ -31,7 +35,7 @@ export const FormInput = ({
         required: required,
       }}
       render={({ field: { onChange, onBlur, value } }) => (
-        <View alignItems="center" width={'100%'}>
+        <View alignItems="center" width={'100%'} style={style}>
           <View w="100%">
             <Stack>
               {label && <Typography>{label}</Typography>}
@@ -40,7 +44,10 @@ export const FormInput = ({
                 onBlur={onBlur}
                 onChangeText={onChange}
                 value={value}
+                inputMode={inputMode}
+                secureTextEntry={type === 'password'}
                 style={{ width: 300 }}
+                {...rest}
               />
               {helperText && <Typography>{helperText}</Typography>}
               {errors && (

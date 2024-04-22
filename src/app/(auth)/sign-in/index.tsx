@@ -5,7 +5,7 @@ import { StyleSheet, SafeAreaView } from 'react-native';
 import { AuthValidator, authValidator } from '@validations/auth';
 import { useAuth } from '@contexts/auth-provider';
 import { spacings } from '@design/spacings';
-import { Button } from '@components/atoms/Button';
+import { Button } from '@components/atoms/Button2';
 import { FormInput } from '@components/atoms/FormInput';
 import { signInAPi } from '@apis/auth/sign-in';
 import { Avatar, Form } from 'tamagui';
@@ -43,7 +43,7 @@ export default function AuthScreen() {
           control={control}
           name={'uid'}
           label={'Uid'}
-          placeholder={'Placeholder'}
+          placeholder={'Uid'}
           required={true}
           errors={errors.uid}
           errorMessage={errors.uid?.message}
@@ -56,6 +56,7 @@ export default function AuthScreen() {
           required={true}
           errors={errors.password}
           errorMessage={errors.password?.message}
+          style={{ marginTop: spacings.regular }}
         />
 
         {/* <Avatar size={'$7'} circular>
@@ -65,7 +66,8 @@ export default function AuthScreen() {
 
         <Form.Trigger asChild>
           <Button
-            // loading={loading}
+            style={{ marginTop: spacings.big }}
+            isLoading={loading}
             onPress={() => setLoading(true)}
             content={'Sign In'}
           />

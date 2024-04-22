@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export default function SignedLayout() {
   // const { isLogged } = useAuth();
-  const isLogged = false;
+  const isLogged = true;
 
   const [loaded] = useFonts({
     Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),

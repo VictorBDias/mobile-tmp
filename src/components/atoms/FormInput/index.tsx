@@ -3,8 +3,8 @@ import { IFormInputProps } from './formInput.interface';
 import { Input, Stack, View } from 'tamagui';
 import { Typography } from '../Typography';
 import { AlertCircle } from '@tamagui/lucide-icons';
-import { colors } from '@design/colors';
 import { spacings } from '@design/spacings';
+import { useTheme } from '@contexts/theme-provider';
 
 export const FormInput = ({
   control,
@@ -20,6 +20,7 @@ export const FormInput = ({
   style,
   ...rest
 }: IFormInputProps) => {
+  const { colors } = useTheme();
   return (
     <Controller
       name={name}

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { TypographyVariants } from './typography.interfaces';
-import { colors } from '@design/colors';
+import { useTheme } from '@contexts/theme-provider';
 
 const useTypographyStyles = (
   color?: string,
@@ -19,6 +19,7 @@ const useTypographyStyles = (
     | '900'
     | undefined
 ) => {
+  const { colors } = useTheme();
   const styles = StyleSheet.create({
     title: {
       fontSize: 24,

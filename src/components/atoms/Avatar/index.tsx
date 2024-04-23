@@ -1,9 +1,10 @@
 import React from 'react';
-import { Stack, Avatar as TamaguiAvatar, XStack } from 'tamagui';
+import { Stack, Avatar as TamaguiAvatar } from 'tamagui';
 import { IAvatarProps } from './avatar.interfaces';
-import { colors } from '@design/colors';
+import { useTheme } from '@contexts/theme-provider';
 
 export const Avatar = ({ src, size, style, onPress }: IAvatarProps) => {
+  const { colors } = useTheme();
   return (
     <Stack onPress={onPress}>
       <TamaguiAvatar circular size={size} style={style}>

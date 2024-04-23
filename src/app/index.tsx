@@ -1,24 +1,23 @@
 import { Redirect } from 'expo-router';
 import { useFonts } from 'expo-font';
-import { useEffect } from 'react';
+import { View } from 'react-native';
+import { Spinner } from 'tamagui';
+import { useAuth } from '@contexts/auth-provider';
 
 export default function SignedLayout() {
-  // const { isLogged } = useAuth();
-  const isLogged = true;
+  const { isLogged } = useAuth();
 
   const [loaded] = useFonts({
     Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
     InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
   });
 
-  useEffect(() => {
-    if (loaded) {
-      // can hide splash screen here
-    }
-  }, [loaded]);
-
   if (!loaded) {
-    return null;
+    return (
+      <View>
+        <Spinner size="large" />
+      </View>
+    );
   }
 
   if (!isLogged) {

@@ -11,7 +11,7 @@ import { signInAPi } from '@apis/auth/sign-in';
 import { Avatar, Form } from 'tamagui';
 import { useState } from 'react';
 
-export default function AuthScreen() {
+export default function SignInScreen() {
   const router = useRouter();
   const {
     formState: { errors, isDirty, isSubmitting },

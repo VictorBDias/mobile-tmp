@@ -2,9 +2,9 @@ import { transparentize } from 'polished';
 import { StyleSheet } from 'react-native';
 
 import { ButtonSizes, ButtonVariants } from './button.interfaces';
-import { colors } from '@design/colors';
 import { spacings } from '@design/spacings';
 import { TypographyVariants } from '../Typography/typography.interfaces';
+import { useTheme } from '@contexts/theme-provider';
 
 interface IVariantStyles {
   variant: ButtonVariants;
@@ -30,6 +30,7 @@ export const useButtonStyles = (
   content?: string,
   backgroundColor?: string
 ) => {
+  const { colors } = useTheme();
   const variantStyles: IVariantStyles[] = [
     {
       variant: 'opaque',

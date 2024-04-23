@@ -54,7 +54,8 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     <AuthContext.Provider
       value={{
         login,
-        isLogged: Boolean(user) && Boolean(containsItem('user')),
+        isLogged: false,
+        // isLogged: Boolean(user) && Boolean(containsItem('user')),
         status,
         error,
         user,

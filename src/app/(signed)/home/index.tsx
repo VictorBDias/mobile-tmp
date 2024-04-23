@@ -1,4 +1,4 @@
-import { Typography } from '@components/atoms/Typography/Typography';
+import { Typography } from '@components/atoms/Typography';
 import { useTranslation } from 'react-i18next';
 
 export default function Home() {

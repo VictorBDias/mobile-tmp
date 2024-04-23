@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { TypographyVariants } from './typography.interfaces';
-import colors from '@design/colors';
+import { colors } from '@design/colors';
 
 const useTypographyStyles = (
   color?: string,
@@ -22,22 +22,22 @@ const useTypographyStyles = (
   const styles = StyleSheet.create({
     title: {
       fontSize: 24,
-      color: color || colors.darkText,
+      color: color || colors.fullColor,
       fontWeight: fontWeight,
     },
     subTitle: {
       fontSize: 16,
-      color: color || colors.darkText,
+      color: color || colors.fullColor,
       fontWeight: fontWeight,
     },
     regular: {
       fontSize: 14,
-      color: color || colors.darkText,
+      color: color || colors.fullColor,
       fontWeight: fontWeight,
     },
     error: {
       fontSize: 14,
-      color: color || colors.red[500],
+      color: color || colors.error,
       fontWeight: fontWeight,
     },
   });

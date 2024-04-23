@@ -21,7 +21,12 @@ export const Header = ({
       {...rest}
     >
       <XStack alignItems="center">
-        {avatar && <Avatar size="$5" />}
+        {avatar && (
+          <Avatar
+            src="https://i.pinimg.com/736x/0b/0d/4c/0b0d4cf5c497566defb97a10d81526f5.jpg"
+            size="$5"
+          />
+        )}
 
         {content && (
           <Typography color="white" style={{ marginLeft: spacings.small }}>

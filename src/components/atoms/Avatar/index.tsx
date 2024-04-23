@@ -6,7 +6,7 @@ import { colors } from '@design/colors';
 export const Avatar = ({ src, size, style, onPress }: IAvatarProps) => {
   return (
     <Stack onPress={onPress}>
-      <TamaguiAvatar size={size} style={style}>
+      <TamaguiAvatar circular size={size} style={style}>
         <TamaguiAvatar.Image src={src} />
         <TamaguiAvatar.Fallback
           backgroundColor={colors.primary}

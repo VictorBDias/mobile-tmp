@@ -1,3 +1,4 @@
+import { useTheme } from '@contexts/theme-provider';
 import { IconProps } from './icon.interfaces';
 import {
   Plus,
@@ -9,7 +10,8 @@ import {
 } from '@tamagui/lucide-icons';
 
 export const Icon = ({ color, name, size = 20, style, testID }: IconProps) => {
-  const props = { size, color, style, testID };
+  const { colors } = useTheme();
+  const props = { color: color ?? colors.fullColor, size, style, testID };
   switch (name) {
     case 'plus':
       return <Plus {...props} />;

@@ -1,4 +1,5 @@
 import { IColor, colors, darkColors } from '@design/colors';
+import { StatusBar } from 'expo-status-bar';
 import { type ReactNode, createContext, useContext, useState } from 'react';
 import { Theme } from 'tamagui';
 
@@ -11,7 +12,7 @@ export const ThemeContext = createContext<{
 } | null>(null);
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark');
 
   return (
     <ThemeContext.Provider
@@ -21,6 +22,11 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
         changeTheme: theme => setTheme(theme),
       }}
     >
+      <StatusBar
+        style={theme === 'light' ? 'dark' : 'light'}
+        backgroundColor="transparent"
+        translucent
+      />
       <Theme name={theme}>{children}</Theme>
     </ThemeContext.Provider>
   );

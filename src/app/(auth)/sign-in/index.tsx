@@ -5,7 +5,7 @@ import { StyleSheet, SafeAreaView } from 'react-native';
 import { AuthValidator, authValidator } from '@validations/auth';
 import { useAuth } from '@contexts/auth-provider';
 import { spacings } from '@design/spacings';
-import { Button } from '@components/atoms/Button2';
+import { Button } from '@components/atoms/Button';
 import { FormInput } from '@components/atoms/FormInput';
 import { signInAPi } from '@apis/auth/sign-in';
 import { Avatar, Form } from 'tamagui';
@@ -58,11 +58,6 @@ export default function AuthScreen() {
           errorMessage={errors.password?.message}
           style={{ marginTop: spacings.regular }}
         />
-
-        {/* <Avatar size={'$7'} circular>
-        <Avatar.Image src="http://picsum.photos/200/300" />
-        <Avatar.Fallback backgroundColor="red" />
-      </Avatar> */}
 
         <Form.Trigger asChild>
           <Button

@@ -43,7 +43,7 @@
 - mmkv
 - atomic design
 - react-query
-- native-base
+- tamagui
 - react-hook-form
 - zod
 - i18next

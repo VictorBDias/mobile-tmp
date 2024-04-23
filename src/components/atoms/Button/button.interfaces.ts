@@ -13,7 +13,7 @@ export type ButtonVariants =
 
 export type ButtonSizes = 'big' | 'regular' | 'small' | 'slim';
 
-export interface ButtonProps extends Omit<PressableProps, 'style'> {
+export interface IButtonProps extends Omit<PressableProps, 'style'> {
   content?: string;
   iconName?: any;
   variant?: ButtonVariants;

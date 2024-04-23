@@ -1,10 +1,10 @@
 import { transparentize } from 'polished';
 import { StyleSheet } from 'react-native';
 
-import { useTheme } from '@shared/contexts/theme.context';
-
-import { TypographyVariants } from '../Typography';
 import { ButtonSizes, ButtonVariants } from './button.interfaces';
+import { colors } from '@design/colors';
+import { spacings } from '@design/spacings';
+import { TypographyVariants } from '../Typography/typography.interfaces';
 
 interface IVariantStyles {
   variant: ButtonVariants;
@@ -30,9 +30,6 @@ export const useButtonStyles = (
   content?: string,
   backgroundColor?: string
 ) => {
-  const { theme } = useTheme();
-  const { colors, borders, spacings } = theme;
-
   const variantStyles: IVariantStyles[] = [
     {
       variant: 'opaque',
@@ -84,11 +81,11 @@ export const useButtonStyles = (
   const getSize = (): ISizeStyles => {
     switch (size) {
       case 'big':
-        return { textVariant: 'boldRegular', styledIconSize: 24, height: 51 };
+        return { textVariant: 'regular', styledIconSize: 24, height: 51 };
 
       case 'slim':
         return {
-          textVariant: 'boldRegular',
+          textVariant: 'regular',
           styledIconSize: 16,
           height: 32,
           width: 92,
@@ -98,12 +95,12 @@ export const useButtonStyles = (
         return {
           height: 33,
           styledIconSize: 16,
-          textVariant: 'boldDescription',
+          textVariant: 'regular',
         };
 
       default:
         return {
-          textVariant: 'boldRegular',
+          textVariant: 'regular',
           styledIconSize: 16,
           height: 40,
         };
@@ -122,19 +119,19 @@ export const useButtonStyles = (
       alignItems: 'center',
       justifyContent: 'center',
       flexDirection: 'row',
-      borderRadius: borders.small,
+      borderRadius: 8,
       height,
       minWidth: content ? 40 : height,
-      paddingHorizontal: spacings.paddings.small,
+      paddingHorizontal: spacings.small,
       width: width || 'auto',
       ...getVariantStyle(),
     },
     textContainer: {
       flex: 1,
     },
-    rightIcon: { marginLeft: content ? spacings.margins.tiny : 0 },
+    rightIcon: { marginLeft: content ? spacings.tiny : 0 },
     icon: {
-      marginRight: content ? spacings.margins.small : 0,
+      marginRight: content ? spacings.small : 0,
     },
   });
 

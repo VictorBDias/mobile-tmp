@@ -1,50 +1,35 @@
 import React from 'react';
-import { HStack, IconButton, Icon, Text, Box, Avatar } from 'native-base';
 import { spacings } from '@design/spacings';
 import { IHeaderProps } from './header.interface';
+import { XStack } from 'tamagui';
+import { Typography } from '@components/atoms/Typography';
+import { Avatar } from '@components/atoms';
 
 export const Header = ({
   avatar,
   content,
   color,
   sideElements,
+  ...rest
 }: IHeaderProps) => {
   return (
-    <>
-      <Box safeAreaTop bg={color} />
-      <HStack
-        bg={color}
-        px="1"
-        py="3"
-        justifyContent="space-between"
-        alignItems="center"
-        w="100%"
-      >
-        <HStack alignItems="center">
-          {avatar && (
-            <Avatar
-              bg="purple.600"
-              alignSelf="center"
-              size="lg"
-              source={{
-                uri: avatar,
-              }}
-            />
-          )}
+    <XStack
+      backgroundColor={color}
+      justifyContent="space-between"
+      alignItems="center"
+      w="100%"
+      {...rest}
+    >
+      <XStack alignItems="center">
+        {avatar && <Avatar size="$5" />}
 
-          {content && (
-            <Text
-              color="white"
-              fontSize="16"
-              fontWeight="medium"
-              style={{ marginLeft: spacings.small }}
-            >
-              {content}
-            </Text>
-          )}
-        </HStack>
-        {sideElements && <HStack>{sideElements}</HStack>}
-      </HStack>
-    </>
+        {content && (
+          <Typography color="white" style={{ marginLeft: spacings.small }}>
+            {content}
+          </Typography>
+        )}
+      </XStack>
+      {sideElements && <XStack>{sideElements}</XStack>}
+    </XStack>
   );
 };

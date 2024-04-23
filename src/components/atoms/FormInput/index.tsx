@@ -1,10 +1,3 @@
-// import {
-//   FormControl,
-//   Input,
-//   Stack,
-//   WarningOutlineIcon,
-//   Box,
-// } from 'native-base';
 import { Controller } from 'react-hook-form';
 import { IFormInputProps } from './formInput.interface';
 import { Input, Stack, View } from 'tamagui';

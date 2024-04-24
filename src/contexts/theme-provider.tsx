@@ -1,7 +1,14 @@
 import { IColor, colors, darkColors } from '@design/colors';
 import { StatusBar } from 'expo-status-bar';
-import { type ReactNode, createContext, useContext, useState } from 'react';
+import {
+  type ReactNode,
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+} from 'react';
 import { Theme } from 'tamagui';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
 
 type Theme = 'light' | 'dark';
 
@@ -13,6 +20,22 @@ export const ThemeContext = createContext<{
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>('light');
+
+  useEffect(() => {
+    const setSystemPreferences = () => {
+      const isLightTheme = theme === 'light';
+      try {
+        changeNavigationBarColor(
+          isLightTheme ? colors.background : darkColors.background,
+          !isLightTheme
+        );
+      } catch (e) {
+        console.error(e);
+      }
+    };
+
+    setSystemPreferences();
+  }, [theme]);
 
   return (
     <ThemeContext.Provider

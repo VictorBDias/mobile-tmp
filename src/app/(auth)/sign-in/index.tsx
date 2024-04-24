@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'expo-router';
 import { useForm } from 'react-hook-form';
-import { StyleSheet, SafeAreaView } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { AuthValidator, authValidator } from '@validations/auth';
 import { useAuth } from '@contexts/auth-provider';
 import { spacings } from '@design/spacings';
@@ -10,6 +10,8 @@ import { FormInput } from '@components/atoms/FormInput';
 import { signInAPi } from '@apis/auth/sign-in';
 import { Avatar, Form } from 'tamagui';
 import { useState } from 'react';
+import { useTheme } from '@contexts/theme-provider';
+import { colors } from '@design/colors';
 
 export default function SignInScreen() {
   const router = useRouter();
@@ -37,7 +39,7 @@ export default function SignInScreen() {
   });
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Form onSubmit={onSubmit}>
         <FormInput
           control={control}
@@ -68,7 +70,7 @@ export default function SignInScreen() {
           />
         </Form.Trigger>
       </Form>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -81,5 +83,6 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: spacings.big,
     gap: spacings.regular,
+    backgroundColor: colors.background,
   },
 });

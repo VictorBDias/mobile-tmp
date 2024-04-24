@@ -23,7 +23,7 @@ export default function SignedLayout() {
         backgroundColor: colors.background,
         height: '100%',
         paddingTop: insets.top + spacings.regular,
-        paddingBottom: insets.bottom + spacings.tiny,
+        // paddingBottom: insets.bottom + spacings.tiny,
       }}
     >
       <Header
@@ -45,7 +45,6 @@ export default function SignedLayout() {
           headerShown: false,
           tabBarStyle: {
             shadowColor: 'transparent',
-            height: 48,
             backgroundColor: colors.background,
             borderTopColor: colors.background,
             borderColor: colors.background,

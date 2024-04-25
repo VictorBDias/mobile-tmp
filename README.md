@@ -47,6 +47,7 @@
 - react-hook-form
 - zod
 - i18next
+- unistyles
 - etc
 
 ## **Author**

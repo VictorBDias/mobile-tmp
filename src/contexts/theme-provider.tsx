@@ -20,7 +20,7 @@ export const ThemeContext = createContext<{
 } | null>(null);
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
     const setSystemPreferences = () => {

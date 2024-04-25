@@ -1,7 +1,4 @@
-import {
-  useMutation,
-  type UseMutateAsyncFunction,
-} from '@tanstack/react-query';
+import { useMutation } from '@tanstack/react-query';
 import {
   type ReactNode,
   createContext,
@@ -13,6 +10,7 @@ import {
 import type { AuthValidator } from '../validations/auth';
 import { IUser } from '../models/user-DTO';
 import { mmkvStorage } from '../storage/mmkvStorage';
+import { signInAPi } from '@apis/auth/sign-in';
 
 export const AuthContext = createContext<{
   login: any;
@@ -34,11 +32,11 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
   } = useMutation({
     mutationKey: ['signin'],
     mutationFn: async (data: AuthValidator) => {
-      // const { token, user: apiUser } = await signInAPI(data);
-      // setItem('user', JSON.stringify(apiUser));
-      // setItem('token', token);
-      // setUser(apiUser);
-      // return { token, user };
+      const { token, user: apiUser } = await signInAPi(data);
+      setItem('user', JSON.stringify(apiUser));
+      setItem('token', token);
+      setUser(apiUser);
+      return { token, user };
     },
   });
 

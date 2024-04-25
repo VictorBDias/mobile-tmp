@@ -2,9 +2,9 @@ import { Controller } from 'react-hook-form';
 import { IFormInputProps } from './formInput.interface';
 import { Input, Stack, View } from 'tamagui';
 import { Typography } from '../Typography';
-import { AlertCircle } from '@tamagui/lucide-icons';
 import { spacings } from '@design/spacings';
 import { useTheme } from '@contexts/theme-provider';
+import { Icon } from '../Icon';
 
 export const FormInput = ({
   control,
@@ -32,15 +32,26 @@ export const FormInput = ({
         <View alignItems="center" width={'100%'} style={style}>
           <View w="100%">
             <Stack>
-              {label && <Typography>{label}</Typography>}
+              {label && (
+                <Typography style={{ marginBottom: spacings.tiny }}>
+                  {label}
+                </Typography>
+              )}
               <Input
                 placeholder={placeholder}
                 onBlur={onBlur}
                 onChangeText={onChange}
+                placeholderTextColor={colors.halfColor}
                 value={value}
+                borderRadius={8}
                 inputMode={inputMode}
                 secureTextEntry={type === 'password'}
-                style={{ width: 300 }}
+                style={{
+                  width: 300,
+                  backgroundColor: colors.surface,
+                  borderColor: colors.surface,
+                  color: colors.fullColor,
+                }}
                 {...rest}
               />
               {helperText && <Typography>{helperText}</Typography>}
@@ -53,7 +64,7 @@ export const FormInput = ({
                     marginTop: spacings.tiny,
                   }}
                 >
-                  <AlertCircle color={colors.error} size={16} />
+                  <Icon name={'alert-circle'} color={colors.error} size={16} />
                   <Typography
                     style={{ marginLeft: spacings.tiny }}
                     variant="error"

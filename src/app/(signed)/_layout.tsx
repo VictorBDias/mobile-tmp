@@ -23,7 +23,6 @@ export default function SignedLayout() {
         backgroundColor: colors.background,
         height: '100%',
         paddingTop: insets.top + spacings.regular,
-        // paddingBottom: insets.bottom + spacings.tiny,
       }}
     >
       <Header

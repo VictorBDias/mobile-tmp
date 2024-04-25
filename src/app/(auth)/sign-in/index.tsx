@@ -1,17 +1,15 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'expo-router';
 import { useForm } from 'react-hook-form';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
 import { AuthValidator, authValidator } from '@validations/auth';
 import { useAuth } from '@contexts/auth-provider';
 import { spacings } from '@design/spacings';
 import { Button } from '@components/atoms/Button';
 import { FormInput } from '@components/atoms/FormInput';
 import { signInAPi } from '@apis/auth/sign-in';
-import { Avatar, Form } from 'tamagui';
-import { useState } from 'react';
-import { useTheme } from '@contexts/theme-provider';
-import { colors } from '@design/colors';
+import { Form } from 'tamagui';
+import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 export default function SignInScreen() {
   const router = useRouter();
@@ -23,12 +21,12 @@ export default function SignInScreen() {
     resolver: zodResolver(authValidator),
   });
   const { login, status } = useAuth();
-  const [loading, setLoading] = useState(false);
+
+  const { styles } = useStyles(stylesheet);
 
   const isLoading = status === 'pending' && isSubmitting;
 
   const onSubmit = handleSubmit(async ({ uid, password }) => {
-    console.log('uid:', uid);
     const result = await signInAPi({
       uid,
       password,
@@ -45,7 +43,7 @@ export default function SignInScreen() {
           control={control}
           name={'uid'}
           label={'Uid'}
-          placeholder={'Uid'}
+          placeholder={'Input you uid'}
           required={true}
           errors={errors.uid}
           errorMessage={errors.uid?.message}
@@ -54,7 +52,7 @@ export default function SignInScreen() {
           control={control}
           name={'password'}
           label={'Password'}
-          placeholder={'Password'}
+          placeholder={'Input you password'}
           required={true}
           errors={errors.password}
           errorMessage={errors.password?.message}
@@ -64,8 +62,8 @@ export default function SignInScreen() {
         <Form.Trigger asChild>
           <Button
             style={{ marginTop: spacings.big }}
-            isLoading={loading}
-            onPress={() => setLoading(true)}
+            isLoading={isLoading}
+            onPress={onSubmit}
             content={'Sign In'}
           />
         </Form.Trigger>
@@ -74,7 +72,7 @@ export default function SignInScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet(theme => ({
   container: {
     display: 'flex',
     justifyContent: 'center',
@@ -83,6 +81,6 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: spacings.big,
     gap: spacings.regular,
-    backgroundColor: colors.background,
+    backgroundColor: theme.colors.background,
   },
-});
+}));

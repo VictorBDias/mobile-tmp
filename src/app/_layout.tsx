@@ -7,7 +7,7 @@ import { TamaguiProvider } from 'tamagui';
 import tamaguiConfig from '../tamagui.config';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import ThemeProvider from '@contexts/theme-provider';
-import { View } from 'react-native';
+import '../unistyles';
 
 export default function RootLayout() {
   const queryClient = new QueryClient();

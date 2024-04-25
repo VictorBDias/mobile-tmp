@@ -9,6 +9,7 @@ import {
 } from 'react';
 import { Theme } from 'tamagui';
 import changeNavigationBarColor from 'react-native-navigation-bar-color';
+import { UnistylesRuntime } from 'react-native-unistyles';
 
 type Theme = 'light' | 'dark';
 
@@ -19,7 +20,7 @@ export const ThemeContext = createContext<{
 } | null>(null);
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark');
 
   useEffect(() => {
     const setSystemPreferences = () => {
@@ -29,6 +30,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
           isLightTheme ? colors.background : darkColors.background,
           !isLightTheme
         );
+        UnistylesRuntime.setTheme(theme);
       } catch (e) {
         console.error(e);
       }

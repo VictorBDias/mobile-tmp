@@ -24,6 +24,14 @@ npm-debug.*
 yarn-debug.*
 yarn-error.*
 
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # macOS
 .DS_Store
 *.pem

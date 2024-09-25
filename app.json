@@ -2,6 +2,7 @@
   "expo": {
     "name": "mobile-tmp",
     "slug": "mobile-tmp",
+    "jsEngine": "hermes",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,7 +21,8 @@
     "ios": {
       "googleServicesFile": "./GoogleService-Info.plist",
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.mobiletmp"
+      "bundleIdentifier": "com.anonymous.mobiletmp",
+      "jsEngine": "jsc"
     },
     "android": {
       "googleServicesFile": "./google-services.json",

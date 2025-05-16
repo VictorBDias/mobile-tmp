@@ -2,6 +2,7 @@
   "expo": {
     "name": "mobile-tmp",
     "slug": "mobile-tmp",
+    "sdkVersion": "49.0.0",
     "jsEngine": "hermes",
     "version": "1.0.0",
     "orientation": "portrait",

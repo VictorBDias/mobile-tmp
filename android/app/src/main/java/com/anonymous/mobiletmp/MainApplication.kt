@@ -40,11 +40,11 @@ class MainApplication : Application(), ReactApplication {
   )
 
   override val reactHost: ReactHost
-    get() = getDefaultReactHost(this.applicationContext, reactNativeHost)
+    get() = getDefaultReactHost(applicationContext, reactNativeHost)
 
   override fun onCreate() {
     super.onCreate()
-    SoLoader.init(this, false)
+    SoLoader.init(this, OpenSourceMergedSoMapping)
     if (!BuildConfig.REACT_NATIVE_UNSTABLE_USE_RUNTIME_SCHEDULER_ALWAYS) {
       ReactFeatureFlags.unstable_useRuntimeSchedulerAlways = false
     }

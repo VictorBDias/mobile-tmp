@@ -1,4 +1,6 @@
 {
+  "ios.deploymentTarget": "15.0",
+  "newArchEnabled": "true",
   "expo.jsEngine": "jsc",
   "EX_DEV_CLIENT_NETWORK_INSPECTOR": "true",
   "ios.useFrameworks": "static"

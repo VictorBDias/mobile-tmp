@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "cleanup": "pnpm exec rimraf node_modules",
     "lint": "eslint . --ext .ts,.tsx",
-    "prebuild": "expo prebuild"
+    "prebuild": "expo prebuild",
+    "nuke": "rm -rf node_modules; rm -rf ios/build; rm -rf ios/Pods; rm -rf ios/Podfile.lock; yarn; cd ios; pod install"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
